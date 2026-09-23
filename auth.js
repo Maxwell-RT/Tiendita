@@ -1,13 +1,13 @@
-/* ============================================================
-   auth.js — sesión de administrador
-   ------------------------------------------------------------
-   AVISO: esto es solo una barrera de interfaz, no seguridad real.
-   El usuario y la clave quedan visibles en este archivo, que
-   cualquiera puede leer desde el navegador (Ver código fuente,
-   o la pestaña "Sources" del inspector). Para un sitio real, el
-   login debe validarse en un servidor (backend), no comparando
-   strings en JavaScript del lado del cliente.
-   ============================================================ */
+  /* ============================================================
+    auth.js — sesión de administrador
+    ------------------------------------------------------------
+    AVISO: esto es solo una barrera de interfaz, no seguridad real.
+    El usuario y la clave quedan visibles en este archivo, que
+    cualquiera puede leer desde el navegador (Ver código fuente,
+    o la pestaña "Sources" del inspector). Para un sitio real, el
+    login debe validarse en un servidor (backend), no comparando
+    strings en JavaScript del lado del cliente.
+    ============================================================ */
 
 // Clave con la que se guarda el estado de sesión en este navegador
 const CLAVE_SESION = 'biblioteca_admin_sesion';
