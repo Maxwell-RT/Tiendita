@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de administración — Biblioteca del Abasto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Colores.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- El script al final de la página (auth.js + protegerPagina())
+       es lo que impide entrar acá sin haber iniciado sesión -->
+  <header class="admin-topbar">
+    <span class="brand">&lt;/&gt; Panel de administración</span>
+    <div class="acciones">
+      <a href="index.html" class="enlace-tienda">Ver tienda ↗</a>
+      <button class="btn-salir" id="btn-salir" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- ===== Catálogo ===== -->
+    <section>
+      <div class="panel-header">
+        <h2 class="seccion-titulo-simple">Catálogo</h2>
+      </div>
+
+      <table class="tabla-admin">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--
+            Fila por libro, escrita a mano. Para agregar uno nuevo,
+            copiá una fila <tr>...</tr> y cambiá los datos. Los botones
+            "Editar" y "Eliminar" son solo visuales: sin JavaScript ni
+            backend no pueden borrar ni modificar nada por sí solos.
+          -->
+          <tr>
+            <td>Neuromante</td>
+            <td>William Gibson</td>
+            <td>$8.500</td>
+            <td>
+              <div class="acciones-fila">
+                <button class="btn-mini editar" type="button">Editar</button>
+                <button class="btn-mini eliminar" type="button">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>¿Sueñan los androides con ovejas eléctricas?</td>
+            <td>Philip K. Dick</td>
+            <td>$7.900</td>
+            <td>
+              <div class="acciones-fila">
+                <button class="btn-mini editar" type="button">Editar</button>
+                <button class="btn-mini eliminar" type="button">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>La sociedad del cansancio</td>
+            <td>Byung-Chul Han</td>
+            <td>$6.400</td>
+            <td>
+              <div class="acciones-fila">
+                <button class="btn-mini editar" type="button">Editar</button>
+                <button class="btn-mini eliminar" type="button">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Los desposeídos</td>
+            <td>Ursula K. Le Guin</td>
+            <td>$9.200</td>
+            <td>
+              <div class="acciones-fila">
+                <button class="btn-mini editar" type="button">Editar</button>
+                <button class="btn-mini eliminar" type="button">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Las cosas que perdimos en el fuego</td>
+            <td>Mariana Enríquez</td>
+            <td>$7.100</td>
+            <td>
+              <div class="acciones-fila">
+                <button class="btn-mini editar" type="button">Editar</button>
+                <button class="btn-mini eliminar" type="button">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Ficciones</td>
+            <td>Jorge Luis Borges</td>
+            <td>$6.900</td>
+            <td>
+              <div class="acciones-fila">
+                <button class="btn-mini editar" type="button">Editar</button>
+                <button class="btn-mini eliminar" type="button">Eliminar</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== Formulario "Nuevo libro" (visual) ===== -->
+    <section style="margin-top: 48px;">
+      <div class="panel-header">
+        <h2 class="seccion-titulo-simple">Agregar libro</h2>
+      </div>
+
+      <!--
+        También visual: sin backend, este formulario no guarda nada.
+        Sirve para mostrar cómo se vería la carga de un libro nuevo.
+      -->
+      <form class="form-libro-simple">
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="nuevo-titulo">Título</label>
+            <input type="text" id="nuevo-titulo" name="titulo">
+          </div>
+          <div class="campo">
+            <label for="nuevo-autor">Autor</label>
+            <input type="text" id="nuevo-autor" name="autor">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="nuevo-precio">Precio</label>
+          <input type="text" id="nuevo-precio" name="precio" placeholder="$0">
+        </div>
+        <button type="button" class="btn-cyber">Guardar libro</button>
+      </form>
+    </section>
+
+    <!-- ===== Pedidos ===== -->
+    <section style="margin-top: 48px;">
+      <div class="panel-header">
+        <h2 class="seccion-titulo-simple">Pedidos</h2>
+      </div>
+
+      <table class="tabla-admin">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Libro</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filas de ejemplo, cargadas a mano -->
+          <tr>
+            <td>#001</td>
+            <td>Camila R.</td>
+            <td>Ficciones</td>
+            <td><span class="estado-select pendiente">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Nicolás F.</td>
+            <td>Neuromante</td>
+            <td><span class="estado-select enviado">Enviado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    // Si no hay sesión activa, protegerPagina() manda a login.html
+    // antes de que se llegue a ver el contenido del panel.
+    protegerPagina();
+
+    document.getElementById('btn-salir').addEventListener('click', cerrarSesion);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca del Gato</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Colores.css">
+</head>
+<body>
+
+  <!-- Barra de estado -->
+  <div class="hud-bar">
+    <span class="online">SISTEMA EN LÍNEA</span>
+    <span>BIBLIOTECA DEL GATO // SECTOR LIBROS</span>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="navbar-cyber">
+    <div class="container">
+      <a href="#" class="brand"><span class="brand-mark">&lt;/&gt;</span> Biblioteca del Gato</a>
+      <ul class="nav-links">
+        <li><a href="#catalogo" class="activo">Catálogo</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <p class="hero-eyebrow"> LIBRERÍA INDEPENDIENTE DEL GATO</p>
+    <h1><span class="glitch" data-text="Biblioteca del Gato">Biblioteca del Gato</span></h1>
+    <p>
+      Libros nuevos y usados, seleccionados a mano. Un catálogo chico,
+      curado, con títulos que vale la pena tener en la biblioteca.
+    </p>
+    <div class="hero-actions">
+      <a href="#catalogo" class="btn-cyber">Ver catálogo</a>
+      <a href="#nosotros" class="btn-cyber secundario">Cómo compramos y vendemos</a>
+    </div>
+  </header>
+
+  <!-- Catálogo -->
+  <section class="seccion" id="catalogo">
+    <div class="seccion-titulo">
+      <h2>Catálogo</h2>
+      <span class="contador">6 Títulos disponibles</span>
+    </div>
+
+    <div class="catalogo">
+
+      <!---Catalogo de libros disponibles en la tiendita -->
+      <article class="libro-card">
+        <div class="libro-portada">
+          <img src="IMG/shopping.png" alt="Portada de Shopping">
+        </div>
+        <div class="libro-info">
+          <p class="libro-autor">Wizards of the Coast</p>
+          <h3 class="libro-titulo">Libro de Dungeons & Dragons</h3>
+          <span class="libro-precio">$8.500</span>
+        </div>
+      </article>
+
+      <article class="libro-card">
+        <div class="libro-portada">
+          <img src="IMG/image_1790041529546.png" alt="Portada de ¿Sueñan los androides con ovejas eléctricas?">
+        </div>
+        <div class="libro-info">
+          <p class="libro-autor">Philip K. Dick</p>
+          <h3 class="libro-titulo">¿Sueñan los androides con ovejas eléctricas?</h3>
+          <span class="libro-precio">$7.900</span>
+        </div>
+      </article>
+
+      <article class="libro-card">
+        <div class="libro-portada">
+          <img src="IMG/1602274312_cover.png" alt="Portada de Perico trepa por Chile">
+        </div>
+        <div class="libro-info">
+          <p class="libro-autor">Alicia Morel / Marcela Paz</p>
+          <h3 class="libro-titulo">Perico trepa por Chile</h3>
+          <span class="libro-precio">$6.400</span>
+        </div>
+      </article>
+
+      <article class="libro-card">
+        <div class="libro-portada">
+          <img src="IMG/image_1790042220894.png" alt="Portada de Los desposeídos">
+        </div>
+        <div class="libro-info">
+          <p class="libro-autor">Ursula K. Le Guin</p>
+          <h3 class="libro-titulo">Los desposeídos</h3>
+          <span class="libro-precio">$9.200</span>
+        </div>
+      </article>
+
+      <article class="libro-card">
+        <div class="libro-portada">
+          <img src="IMG/thumb_14220_portadas_big.jpeg" alt="Portada de Las cosas que perdimos en el fuego">
+        </div>
+        <div class="libro-info">
+          <p class="libro-autor">Mariana Enríquez</p>
+          <h3 class="libro-titulo">Las cosas que perdimos en el fuego</h3>
+          <span class="libro-precio">$7.100</span>
+        </div>
+      </article>
+
+      <article class="libro-card">
+        <div class="libro-portada">
+          <img src="IMG/image_1790042582899.png" alt="Portada de Ficciones">
+        </div>
+        <div class="libro-info">
+          <p class="libro-autor">Jorge Luis Borges</p>
+          <h3 class="libro-titulo">Ficciones</h3>
+          <span class="libro-precio">$6.900</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Boletín -->
+  <section class="seccion" id="nosotros">
+    <div class="boletin">
+      <div>
+        <h2>Novedades cada semana</h2>
+        <p>Sumate para enterarte antes que nadie de ingresos nuevos y descuentos.</p>
+      </div>
+      <form class="form-boletin" onsubmit="return false;">
+        <input type="email" placeholder="tu@correo.com" required>
+        <button class="btn-cyber" type="submit">Suscribirme</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-cyber" id="contacto">
+    <div class="footer-grid">
+      <div>
+        <h4>Biblioteca del Gato</h4>
+        <p>Libros seleccionados a mano en el corazón del Gato.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:hola@bibliotecadelgato.com">hola@bibliotecadelgato.com</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Biblioteca del Gato</span>
+      <a href="login.html" class="enlace-admin-discreto">Acceso administrador</a>
+    </div>
+  </footer>
+
+</body>
+</html>

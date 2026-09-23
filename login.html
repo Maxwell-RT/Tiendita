@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso administrador — Biblioteca del Gato</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Colores.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div class="pantalla-login">
+    <div class="panel-login">
+      <p class="login-eyebrow">// ACCESO RESTRINGIDO</p>
+      <h1>Panel de administración</h1>
+
+      <!--
+        id="form-login" en el <form> y id="mensaje-error" en el <p>:
+        el script de abajo los busca por ese id para leer los campos,
+        validar y mostrar el error si corresponde. Ya no lleva
+        action="admin.html": ahora es el JS el que decide a dónde ir.
+      -->
+      <form id="form-login" novalidate>
+        <div class="campo">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" autocomplete="username" required>
+        </div>
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave" autocomplete="current-password" required>
+        </div>
+        <p class="error-login" id="mensaje-error"></p>
+        <button type="submit" class="btn-cyber" style="width:100%;">Ingresar</button>
+      </form>
+
+      <a href="index.html" class="login-volver">← Volver a la tienda</a>
+    </div>
+  </div>
+
+  <!-- auth.js debe cargar ANTES que este script, porque acá se usan
+       las funciones iniciarSesion() y haySesionActiva() que define -->
+  <script src="auth.js"></script>
+  <script>
+    const formulario = document.getElementById('form-login');
+    const mensajeError = document.getElementById('mensaje-error');
+
+    // Si ya hay sesión activa (por ejemplo, volvió con el botón "atrás"),
+    // manda directo al panel en vez de mostrar el login de nuevo.
+    if (haySesionActiva()) {
+      window.location.href = 'admin.html';
+    }
+
+    // Evita que el form navegue solo (comportamiento por defecto del
+    // navegador) y en su lugar valida con iniciarSesion().
+    formulario.addEventListener('submit', function (evento) {
+      evento.preventDefault();
+      const usuario = document.getElementById('usuario').value.trim();
+      const clave = document.getElementById('clave').value;
+
+      if (iniciarSesion(usuario, clave)) {
+        window.location.href = 'admin.html';
+      } else {
+        mensajeError.textContent = 'Usuario o contraseña incorrectos.';
+      }
+    });
+  </script>
+
+</body>
+</html>
