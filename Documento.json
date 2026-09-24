@@ -1,0 +1,95 @@
+{
+  "proyecto": {
+    "nombre": "Biblioteca del Gato",
+    "descripcion": "Tienda de libros online con estética cyberpunk. Tiene una vista pública para clientes y una vista de administrador protegida por login.",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript (vanilla, sin frameworks)", "Bootstrap (grid/utilidades)"],
+    "requiere_servidor": false,
+    "nota_importante": "El login NO es seguridad real. El usuario y la contraseña quedan visibles en auth.js, que cualquiera puede leer desde el navegador (Ver código fuente / pestaña Sources del inspector). Sirve como barrera de interfaz para un proyecto de estudio, no para producción con datos sensibles."
+  },
+
+  "estructura_de_archivos": [
+    { "archivo": "index.html", "tipo": "página", "descripcion": "Vista pública de la tienda: catálogo de libros en tarjetas estáticas." },
+    { "archivo": "login.html", "tipo": "página", "descripcion": "Formulario de acceso al panel de administrador." },
+    { "archivo": "admin.html", "tipo": "página", "descripcion": "Panel de administración: tabla de catálogo, formulario de alta de libro y tabla de pedidos. Protegida: redirige a login.html si no hay sesión activa." },
+    { "archivo": "auth.js", "tipo": "script", "descripcion": "Lógica de sesión del administrador: valida usuario/contraseña, guarda la sesión, protege admin.html y permite cerrar sesión." },
+    { "archivo": "Colores.css", "tipo": "estilos", "descripcion": "Paleta de colores, tipografía y estilos generales del sitio (navbar, hero, tarjetas de libro, footer)." },
+    { "archivo": "admin.css", "tipo": "estilos", "descripcion": "Estilos específicos del login y del panel de administración (tablas, formularios, botones de acción)." },
+    { "archivo": "Bootstrap/", "tipo": "librería", "descripcion": "Bootstrap local, usado para utilidades de grid." },
+    { "archivo": "IMG/", "tipo": "recursos", "descripcion": "Imágenes de portadas de libros y otros gráficos del sitio." }
+  ],
+
+  "flujo_de_login": {
+    "pasos": [
+      "1. El usuario entra a login.html y completa usuario/contraseña.",
+      "2. Al enviar el formulario, el JS llama a iniciarSesion(usuario, clave).",
+      "3. iniciarSesion() compara los datos con USUARIO_DEMO y CLAVE_DEMO (definidos en auth.js).",
+      "4. Si coinciden, guarda 'true' en sessionStorage bajo la clave 'biblioteca_admin_sesion' y redirige a admin.html.",
+      "5. Si no coinciden, muestra el mensaje de error sin redirigir.",
+      "6. Al cargar admin.html, protegerPagina() revisa sessionStorage; si no hay sesión activa, redirige de vuelta a login.html.",
+      "7. El botón 'Cerrar sesión' llama a cerrarSesion(), que borra la sesión de sessionStorage y vuelve a login.html."
+    ],
+    "duracion_de_sesion": "Mientras dure la pestaña/ventana del navegador abierta (sessionStorage se borra al cerrarla). No persiste entre pestañas nuevas ni entre navegadores distintos."
+  },
+
+  "credenciales_demo": {
+    "usuario": "admin",
+    "contraseña": "gato2026",
+    "donde_cambiarlas": "auth.js, constantes USUARIO_DEMO y CLAVE_DEMO"
+  },
+
+  "funciones_auth_js": [
+    {
+      "nombre": "iniciarSesion(usuario, clave)",
+      "parametros": { "usuario": "string", "clave": "string" },
+      "retorna": "boolean",
+      "descripcion": "Compara los valores recibidos contra las credenciales demo. Si coinciden, guarda la sesión en sessionStorage y devuelve true; si no, devuelve false sin guardar nada."
+    },
+    {
+      "nombre": "haySesionActiva()",
+      "parametros": {},
+      "retorna": "boolean",
+      "descripcion": "Devuelve true si sessionStorage tiene guardada una sesión de administrador activa."
+    },
+    {
+      "nombre": "cerrarSesion()",
+      "parametros": {},
+      "retorna": "void",
+      "descripcion": "Borra la sesión de sessionStorage y redirige a login.html."
+    },
+    {
+      "nombre": "protegerPagina()",
+      "parametros": {},
+      "retorna": "void",
+      "descripcion": "Si no hay sesión activa, redirige inmediatamente a login.html. Se llama al principio de admin.html."
+    }
+  ],
+
+  "elementos_clave_por_pagina": {
+    "login.html": [
+      { "id": "form-login", "tipo": "form", "uso": "Formulario que dispara la validación de usuario/contraseña." },
+      { "id": "usuario", "tipo": "input text", "uso": "Campo de usuario." },
+      { "id": "clave", "tipo": "input password", "uso": "Campo de contraseña." },
+      { "id": "mensaje-error", "tipo": "p", "uso": "Muestra 'Usuario o contraseña incorrectos.' cuando el login falla." }
+    ],
+    "admin.html": [
+      { "id": "btn-salir", "tipo": "button", "uso": "Cierra la sesión y vuelve a login.html." }
+    ]
+  },
+
+  "seguridad": {
+    "nivel": "Ninguno (solo interfaz)",
+    "riesgos": [
+      "La contraseña está en texto plano dentro de auth.js, visible para cualquiera.",
+      "sessionStorage puede modificarse manualmente desde la consola del navegador para saltear el login.",
+      "No hay backend que valide nada del lado del servidor."
+    ],
+    "recomendacion_para_produccion": "Reemplazar auth.js por un login real contra un servidor (API) que verifique las credenciales y devuelva un token de sesión (por ejemplo JWT), en vez de comparar strings en el navegador."
+  },
+
+  "pendientes_sugeridos": [
+    "Conectar el catálogo de admin.html y el de index.html a una fuente de datos compartida (por ejemplo, localStorage o una API) para que los cambios del administrador se reflejen en la tienda.",
+    "Hacer funcionales los botones 'Editar' y 'Eliminar' del catálogo en admin.html.",
+    "Hacer funcional el formulario 'Agregar libro'.",
+    "Agregar un backend real si el sitio va a manejar pedidos o pagos de verdad."
+  ]
+}
