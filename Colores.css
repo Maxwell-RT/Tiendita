@@ -564,6 +564,91 @@ footer.footer-cyber {
   color: var(--texto-dim);
 }
 
+/* ---------- Tarjeta de libro como enlace ---------- */
+/* Antes .libro-card era un <article>; ahora es un <a> que envuelve
+   toda la tarjeta para poder ir a la ficha del libro al hacer clic. */
+.libro-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Ficha de libro (página individual con foto + resumen)
+   ============================================================ */
+.volver-catalogo {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: 0.85rem;
+  color: var(--texto-dim);
+}
+
+.volver-catalogo:hover {
+  color: var(--cian);
+}
+
+.ficha-libro {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.ficha-portada {
+  border: 1px solid var(--borde);
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.ficha-portada img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.ficha-categoria {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--cian);
+  border: 1px solid var(--cian);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.ficha-info h1 {
+  font-family: var(--fuente-display);
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+  color: var(--texto);
+}
+
+.ficha-autor {
+  color: var(--texto-dim);
+  font-size: 0.9rem;
+  margin: 0 0 20px;
+}
+
+.ficha-precio {
+  display: block;
+  font-family: var(--fuente-display);
+  color: var(--verde);
+  font-size: 1.4rem;
+  text-shadow: 0 0 8px rgba(50, 218, 125, 0.35);
+  margin-bottom: 22px;
+}
+
+.ficha-resumen {
+  color: var(--texto);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  max-width: 60ch;
+  margin-bottom: 28px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .navbar-cyber .container {
@@ -586,4 +671,11 @@ footer.footer-cyber {
   .hud-bar {
     font-size: 0.62rem;
   }
+  .ficha-libro {
+    grid-template-columns: 1fr;
+  }
+  .ficha-portada {
+    max-width: 260px;
+  }
 }
+
