@@ -14,7 +14,7 @@ const CLAVE_SESION = 'biblioteca_admin_sesion';
 
 // Credenciales de demostración. Cambialas por las que quieras.
 const USUARIO_DEMO = 'admin';
-const CLAVE_DEMO = 'abasto2026';
+const CLAVE_DEMO = 'Gato2026';
 
 // Revisa usuario/clave y, si son correctos, guarda la sesión activa
 function iniciarSesion(usuario, clave) {

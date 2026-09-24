@@ -33,7 +33,7 @@
 
   "credenciales_demo": {
     "usuario": "admin",
-    "contraseña": "gato2026",
+    "contraseña": "Gato2026",
     "donde_cambiarlas": "auth.js, constantes USUARIO_DEMO y CLAVE_DEMO"
   },
 
