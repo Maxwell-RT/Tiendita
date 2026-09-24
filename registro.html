@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta — Biblioteca del Gato</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Colores.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div class="pantalla-login">
+    <div class="panel-login">
+      <p class="login-eyebrow">// NUEVO CLIENTE</p>
+      <h1>Crear cuenta</h1>
+
+      <!--
+        Formulario solo visual: al ser HTML puro, no hay validación ni servidor detrás. El botón "Crear cuenta"
+      -->
+      <form action="login-usuario.html">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre">
+        </div>
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave">
+        </div>
+        <div class="campo">
+          <label for="clave-confirmar">Confirmar contraseña</label>
+          <input type="password" id="clave-confirmar" name="clave-confirmar">
+        </div>
+        <button type="submit" class="btn-cyber" style="width:100%;">Crear cuenta</button>
+      </form>
+
+      <a href="login-usuario.html" class="login-volver">¿Ya tenés cuenta? Iniciar sesión</a>
+      <a href="index.html" class="login-volver">← Volver a la tienda</a>
+    </div>
+  </div>
+
+</body>
+</html>

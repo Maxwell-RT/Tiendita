@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión — Biblioteca del Gato</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Colores.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div class="pantalla-login">
+    <div class="panel-login">
+      <p class="login-eyebrow">// MI CUENTA</p>
+      <h1>Iniciar sesión</h1>
+
+      <!--
+        Igual que registro.html: formulario solo visual, sin
+        JavaScript ni servidor detrás. El botón "Iniciar sesión"
+        lleva directo a index.html sin validar nada.
+      -->
+      <form action="index.html">
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave">
+        </div>
+        <button type="submit" class="btn-cyber" style="width:100%;">Iniciar sesión</button>
+      </form>
+
+      <a href="registro.html" class="login-volver">¿No tenés cuenta? Registrate</a>
+      <a href="index.html" class="login-volver">← Volver a la tienda</a>
+    </div>
+  </div>
+
+</body>
+</html>

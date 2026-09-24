@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biblioteca del Gato</title>
+  <title>Catálogo — Biblioteca del Gato</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,41 +22,30 @@
   <!-- Navegación -->
   <nav class="navbar-cyber">
     <div class="container">
-      <a href="#" class="brand"><span class="brand-mark">&lt;/&gt;</span> Biblioteca del Gato</a>
+      <a href="index.html" class="brand"><span class="brand-mark">&lt;/&gt;</span> Biblioteca del Gato</a>
       <ul class="nav-links">
-        <li><a href="#catalogo" class="activo">Catálogo</a></li>
-        <li><a href="catalogo.html">Catálogo completo</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
         <li><a href="login-usuario.html">Mi cuenta</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero">
-    <p class="hero-eyebrow"> LIBRERÍA INDEPENDIENTE DEL GATO</p>
-    <h1><span class="glitch" data-text="Biblioteca del Gato">Biblioteca del Gato</span></h1>
-    <p>
-      Libros nuevos y usados, seleccionados a mano. Un catálogo chico,
-      curado, con títulos que vale la pena tener en la biblioteca.
-    </p>
-    <div class="hero-actions">
-      <a href="#catalogo" class="btn-cyber">Ver catálogo</a>
-      <a href="#nosotros" class="btn-cyber secundario">Cómo compramos y vendemos</a>
-    </div>
-  </header>
-
-  <!-- Catálogo -->
-  <section class="seccion" id="catalogo">
+  <!-- Catálogo completo -->
+  <section class="seccion" id="catalogo" style="padding-top: 56px;">
     <div class="seccion-titulo">
-      <h2>Catálogo disponible</h2>
-      <span class="contador">7 Títulos disponibles</span>
+      <h2>Catálogo completo</h2>
+      <span class="contador">7 títulos disponibles</span>
     </div>
 
     <div class="catalogo">
 
-      <!---Catalogo de libros disponibles en la tiendita -->
+      <!--
+        Este catálogo es una copia del de index.html, pensada como
+        página independiente. Si agregás o sacás un libro, recordá
+        actualizarlo en los dos lugares (index.html y acá).
+      -->
       <a class="libro-card" href="ficha-dyd.html">
         <div class="libro-portada">
           <img src="IMG/shopping.png" alt="Portada de Shopping">
@@ -111,6 +100,7 @@
           <span class="libro-precio">$7.100</span>
         </div>
       </a>
+
       <a class="libro-card" href="ficha-dyd.html">
         <div class="libro-portada">
           <img src="IMG/shopping.png" alt="Portada de Shopping">
@@ -121,6 +111,7 @@
           <span class="libro-precio">$8.500</span>
         </div>
       </a>
+
       <a class="libro-card" href="ficha-papelucho.html">
         <div class="libro-portada">
           <img src="IMG/Paz, Marcela - Papelucho 09.jpg" alt="Portada de Papelucho">
@@ -134,20 +125,6 @@
 
     </div>
   </section>
-  
-  <!-- Boletín -->
-  <section class="seccion" id="nosotros">
-    <div class="boletin">
-      <div>
-        <h2>Novedades cada semana</h2>
-        <p>Sumate para enterarte antes que nadie de ingresos nuevos y descuentos.</p>
-      </div>
-      <form class="form-boletin" onsubmit="return false;">
-        <input type="email" placeholder="tu@correo.com" required>
-        <button class="btn-cyber" type="submit">Suscribirme</button>
-      </form>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="footer-cyber" id="contacto">
@@ -159,8 +136,8 @@
       <div>
         <h4>Tienda</h4>
         <ul>
-          <li><a href="#catalogo">Catálogo</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
         </ul>
       </div>
       <div>
