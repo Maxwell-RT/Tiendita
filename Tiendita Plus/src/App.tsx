@@ -1,22 +1,32 @@
-import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Boton from './components/Boton'
+import { Routes, Route } from "react-router-dom";
+import Inicio from "./pages/inicio";
+import Catalogo from "./pages/catalogo";
+import Ficha from "./pages/Ficha";
+import Login from "./pages/login";
+import Registro from "./pages/registro";
+import Carrito from "./pages/Carrito";
 
+// Mapa de rutas de la tienda. Cada <Route> acá reemplaza uno de los
+// archivos .html de Tiendita-main:
+//   index.html        -> "/"
+//   catalogo.html      -> "/catalogo"
+//   ficha-*.html (x7)  -> "/libro/:slug" (una sola página dinámica)
+//   login-usuario.html -> "/mi-cuenta"
+//   registro.html       -> "/registro"
+//
+// El panel de administrador (login.html, admin.html, auth.js) no se
+// adaptó todavía a esta versión: queda pendiente para más adelante.
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-//   <div className="card" style={{ width: '18rem' }}>
-//   <img src="..." className="card-img-top" alt="..." />
-//   <div className="card-body">
-//     <h5 className="card-title">Card title</h5>
-//     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-//     <a href="#" className="btn btn-primary">Go somewhere</a>
-//   </div>
-// </div>
-  <Boton>Iniciar sesión</Boton>
-
-  )
+    <Routes>
+      <Route path="/" element={<Inicio />} />
+      <Route path="/catalogo" element={<Catalogo />} />
+      <Route path="/libro/:slug" element={<Ficha />} />
+      <Route path="/mi-cuenta" element={<Login />} />
+      <Route path="/registro" element={<Registro />} />
+      <Route path="/carrito" element={<Carrito />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
