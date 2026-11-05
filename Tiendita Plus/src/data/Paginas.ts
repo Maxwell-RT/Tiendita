@@ -5,5 +5,5 @@ export interface Pagina {
     descripcion: string;
     aparece_footer: boolean;
     aparece_navbar: boolean;
-    rol: String;
+    rol: string;
     }

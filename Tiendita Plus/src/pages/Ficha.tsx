@@ -1,7 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import BarraEstado from "../components/BarraEstado";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { buscarLibro, formatoPrecio } from "../data/libros";
 import { useCarrito } from "../context/useCarrito";
 

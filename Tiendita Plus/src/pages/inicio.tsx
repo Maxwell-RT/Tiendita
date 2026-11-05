@@ -1,6 +1,3 @@
-import BarraEstado from "../components/BarraEstado";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import LibroCard from "../components/LibroCard";
 import Boton from "../components/Boton";
 import { libros } from "../data/libros";
@@ -14,9 +11,6 @@ import { Link } from "react-router-dom";
 function Inicio() {
   return (
     <>
-      <BarraEstado />
-      <Navbar activo="catalogo" />
-
       {/* Hero */}
       <header className="hero">
         <p className="hero-eyebrow"> LIBRERÍA INDEPENDIENTE DEL GATO</p>
@@ -77,9 +71,10 @@ function Inicio() {
             Para agregar libros y administrar el catálogo
           </span>
         </div>
+        <Link to="/admin/login" className="btn-cyber">
+          Ingresar como administrador
+        </Link>
       </section>
-
-      <Footer />
     </>
   );
 }

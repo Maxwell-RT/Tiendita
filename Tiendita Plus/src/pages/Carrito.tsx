@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import BarraEstado from "../components/BarraEstado";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { useCarrito } from "../context/useCarrito";
 import { buscarLibro, formatoPrecio } from "../data/libros";
 
@@ -20,9 +17,6 @@ function Carrito() {
 
   return (
     <>
-      <BarraEstado />
-      <Navbar />
-
       <section className="seccion">
         <div className="seccion-titulo">
           <h2>Tu carrito</h2>
@@ -106,8 +100,6 @@ function Carrito() {
           </>
         )}
       </section>
-
-      <Footer />
     </>
   );
 }

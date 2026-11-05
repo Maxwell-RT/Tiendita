@@ -1,11 +1,10 @@
+import { Link } from "react-router-dom";
+
 // Footer compartido por todas las páginas. Antes vivía copiado en
 // cada archivo .html; acá es un solo componente.
 //
-// Nota: el HTML original tenía un link "Acceso administrador" al
-// final que llevaba a login.html / admin.html. Esa parte (el panel
-// de administrador con auth.js) todavía no se adaptó a esta versión
-// en React, así que por ahora el link no está. Cuando se arme esa
-// parte, agregalo acá como <Link to="/admin/login">.
+// El link discreto "Acceso administrador" del final lleva al login
+// del panel (/admin/login), igual que en el HTML original.
 function Footer() {
   return (
     <footer className="footer-cyber" id="contacto">
@@ -41,6 +40,9 @@ function Footer() {
       </div>
       <div className="footer-bottom">
         <span>© 2026 Biblioteca del Gato</span>
+        <Link to="/admin/login" className="enlace-admin-discreto">
+          Acceso administrador
+        </Link>
       </div>
     </footer>
   );

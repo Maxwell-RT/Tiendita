@@ -1,6 +1,3 @@
-import BarraEstado from "../components/BarraEstado";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import LibroCard from "../components/LibroCard";
 import { libros } from "../data/libros";
 
@@ -11,9 +8,6 @@ import { libros } from "../data/libros";
 function Catalogo() {
   return (
     <>
-      <BarraEstado />
-      <Navbar activo="catalogo-completo" />
-
       <section className="seccion" id="catalogo" style={{ paddingTop: 56 }}>
         <div className="seccion-titulo">
           <h2>Catálogo completo</h2>
@@ -26,8 +20,6 @@ function Catalogo() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
