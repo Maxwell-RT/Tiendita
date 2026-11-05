@@ -92,6 +92,15 @@ export const libros: Libro[] = [
     resumen:
       "Papelucho cree haber encontrado un marciano y decide esconderlo. Como en el resto de la saga, el humor y la mirada ingenua del protagonista retratan con ternura la infancia y la vida en familia.",
   },
+  {
+    slug: "vader-lord-oscuro",
+    titulo: "Vader: Lord Oscuro",
+    autor: "Charles Soule/Giuseppe Camuncoli",
+    categoria: "Ciencia ficción",
+    precio: 2500,
+    imagen: "/IMG/vader.jpg",
+    resumen:
+      "Comenzando durante los sucesos de Star Wars: Episodio III La Venganza de los Sith directamente después de que Darth Vader descubre que su esposa, Padmé Amidala, ha muerto, la serie narra a Vader yendo en varias misiones a través de la galaxia, mientras caza a los pocos Jedi sobrevivientes junto a su banda de aprendices del lado oscuro conocida como la Inquisición." },
 ];
 
 // Útil para la ficha de un libro: busca por slug (el :slug de la URL)

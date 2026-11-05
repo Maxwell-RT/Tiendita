@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import { formatoPrecio, type Libro } from "../data/libros";
 
 // Tarjeta de libro clickeable. Reemplaza los <a class="libro-card">
-// repetidos a mano en index.html y catalogo.html: ahora cada tarjeta
-// se arma desde los datos de un Libro (ver src/data/libros.ts) y
-// lleva a su ficha en /libro/[slug].
+
+
 interface Props {
   libro: Libro;
 }

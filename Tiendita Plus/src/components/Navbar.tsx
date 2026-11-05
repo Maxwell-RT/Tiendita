@@ -2,12 +2,6 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import { useCarrito } from "../context/useCarrito";
 
-// En el HTML original, cada página (index.html, catalogo.html, cada
-// ficha-*.html) tenía su propia copia de esta barra de navegación,
-// con links levemente distintos entre sí -y a veces directamente
-// desincronizados-. Acá es un solo componente que usan todas las
-// páginas, y la prop `activo` solo cambia qué link se marca como
-// la sección actual.
 interface Props {
   activo?: "catalogo" | "catalogo-completo";
 }

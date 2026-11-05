@@ -1,6 +1,6 @@
 // Barra de estado tipo HUD que aparece arriba de todo, en todas las
-// páginas. En el HTML original era el mismo <div class="hud-bar">
-// copiado y pegado en cada archivo .html; acá es un solo componente.
+// páginas.
+
 function BarraEstado() {
   return (
     <div className="hud-bar">

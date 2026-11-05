@@ -6,15 +6,12 @@ import { buscarLibro, formatoPrecio } from "../data/libros";
 import { useCarrito } from "../context/useCarrito";
 
 // Adaptación de ficha-plantilla.html y las 7 fichas que salían de
-// ella (ficha-dyd.html, ficha-androides.html, etc.). En el HTML
-// original cada libro tenía su propio archivo .html, copiado de la
-// plantilla a mano. Acá es una sola página que recibe el slug desde
-// la URL (/libro/:slug) y busca los datos del libro correspondiente
-// en src/data/libros.ts.
-//
+// ella.
+
 // Para agregar un libro nuevo ahora NO hace falta crear un archivo
 // nuevo: alcanza con agregar un objeto más al array en
-// src/data/libros.ts y automáticamente tiene su propia ficha acá.
+// src/data/libros.ts
+
 function Ficha() {
   const { slug } = useParams();
   const libro = buscarLibro(slug);
