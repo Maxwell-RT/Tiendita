@@ -7,7 +7,6 @@ import { useCarrito } from "../context/useCarrito";
 
 // Adaptación de ficha-plantilla.html y las 7 fichas que salían de
 // ella.
-
 // Para agregar un libro nuevo ahora NO hace falta crear un archivo
 // nuevo: alcanza con agregar un objeto más al array en
 // src/data/libros.ts
@@ -22,23 +21,23 @@ function Ficha() {
   if (!libro) {
     return (
       <>
-        <BarraEstado />
-        <Navbar />
+        {/* <BarraEstado />
+        <Navbar /> */}
         <section className="seccion">
           <Link to="/#catalogo" className="volver-catalogo">
             ← Volver al catálogo
           </Link>
           <p>No encontramos ese libro.</p>
         </section>
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   }
 
   return (
     <>
-      <BarraEstado />
-      <Navbar activo="catalogo" />
+      {/* <BarraEstado />
+      <Navbar activo="catalogo" /> */}
 
       <section className="seccion">
         <Link to="/#catalogo" className="volver-catalogo">
@@ -75,7 +74,7 @@ function Ficha() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import LibroCard from "../components/LibroCard";
 import Boton from "../components/Boton";
 import { libros } from "../data/libros";
+import { Link } from "react-router-dom";
 
 // Adaptación de index.html: hero + catálogo + boletín.
 // La lista de libros ya no está escrita a mano acá -viene de
@@ -69,6 +70,12 @@ function Inicio() {
             <input type="email" placeholder="tu@correo.com" required />
             <Boton>Suscribirme</Boton>
           </form>
+        </div>
+        <div className="seccion-titulo">
+          <h2>Acceso administrador</h2>
+          <span className="contador">
+            Para agregar libros y administrar el catálogo
+          </span>
         </div>
       </section>
 

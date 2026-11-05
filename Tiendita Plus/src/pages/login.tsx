@@ -6,11 +6,7 @@ import Boton from "../components/Boton";
 // adaptó todavía).
 //
 // Igual que en el HTML original, esto es solo visual: no valida ni
-// guarda nada en ningún lado. El botón "Iniciar sesión" lleva
-// directo a la tienda, simulando que el inicio de sesión funcionó.
-// Si en algún momento esto necesita ser real, hay que guardar los
-// datos en algún lado (backend, o como mínimo localStorage) y
-// validar el formulario antes de navegar.
+// guarda nada en ningún lado.
 function Login() {
   const navigate = useNavigate();
 

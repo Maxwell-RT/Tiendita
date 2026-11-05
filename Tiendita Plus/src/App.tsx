@@ -5,6 +5,9 @@ import Ficha from "./pages/Ficha";
 import Login from "./pages/login";
 import Registro from "./pages/registro";
 import Carrito from "./pages/Carrito";
+import BarraEstado from "./components/BarraEstado";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // Mapa de rutas de la tienda. Cada <Route> acá reemplaza uno de los
 // archivos .html de Tiendita-main:
@@ -18,6 +21,9 @@ import Carrito from "./pages/Carrito";
 // adaptó todavía a esta versión: queda pendiente para más adelante.
 function App() {
   return (
+    <>
+    <BarraEstado />
+    <Navbar/>
     <Routes>
       <Route path="/" element={<Inicio />} />
       <Route path="/catalogo" element={<Catalogo />} />
@@ -26,6 +32,8 @@ function App() {
       <Route path="/registro" element={<Registro />} />
       <Route path="/carrito" element={<Carrito />} />
     </Routes>
+    <Footer/>
+    </>
   );
 }
 
