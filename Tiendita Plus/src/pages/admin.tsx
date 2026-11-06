@@ -9,12 +9,7 @@ import { formatoPrecio, libros } from "../data/libros";
 // La tabla del catálogo ya sale de src/data/libros.ts (antes eran
 // filas escritas a mano en el HTML), así que siempre coincide con
 // lo que ve el cliente en la tienda.
-//
-// Igual que en la versión HTML, el formulario "Agregar libro", los
-// botones Editar/Eliminar y la tabla de Pedidos son SOLO VISUALES:
-// no guardan ni cambian nada. Para que funcionen, el catálogo
-// tendría que vivir en un estado editable (por ejemplo un contexto
-// con localStorage, como el del carrito) en vez de un array fijo.
+
 function Admin() {
   const navigate = useNavigate();
 
