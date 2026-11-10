@@ -6,6 +6,7 @@ interface Props {
   activo?: "catalogo" | "catalogo-completo";
 }
 
+
 function Navbar({ activo }: Props) {
   const { cantidadTotal } = useCarrito();
   return (

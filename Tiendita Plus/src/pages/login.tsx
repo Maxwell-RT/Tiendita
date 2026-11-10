@@ -1,12 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import Boton from "../components/Boton";
 
-// Adaptación de login-usuario.html ("Mi cuenta", el login del
-// cliente — no confundir con el panel de administrador, que no se
-// adaptó todavía).
-//
-// Igual que en el HTML original, esto es solo visual: no valida ni
-// guarda nada en ningún lado.
+// "Mi cuenta" ("/mi-cuenta"): inicio de sesión del cliente. Es solo
+// visual: no valida ni guarda nada, el botón lleva directo a la
+// tienda. No confundir con adminLogin.tsx, que sí valida la clave.
 function Login() {
   const navigate = useNavigate();
 

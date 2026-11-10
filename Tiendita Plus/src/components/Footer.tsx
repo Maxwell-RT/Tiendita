@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 
-// Footer compartido por todas las páginas. Antes vivía copiado en
-// cada archivo .html; acá es un solo componente.
-//
-// El link discreto "Acceso administrador" del final lleva al login
-// del panel (/admin/login), igual que en el HTML original.
+/**
+ * Footer — pie de página (datos de contacto y el link discreto
+ * "Acceso administrador" que lleva a /admin/login).
+ *
+ * Sin props. No hace falta ponerlo en cada página: LayoutTienda ya lo
+ * incluye. Para cambiar textos o links, edítalos aquí. Su id="contacto"
+ * es el destino del link "Contacto" del navbar.
+ */
 function Footer() {
   return (
     <footer className="footer-cyber" id="contacto">

@@ -1,10 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import Boton from "../components/Boton";
 
-// Adaptación de registro.html ("Crear cuenta").
-// Misma idea que login.tsx: solo visual, sin guardar ni validar
-// nada de verdad. Al enviar el formulario, simula que la cuenta se
-// creó y manda a la persona a iniciar sesión.
+// Crear cuenta ("/registro"). Igual que login.tsx es solo visual:
+// no guarda ni valida nada, al enviar simula que la cuenta se creó
+// y lleva a "Mi cuenta" para iniciar sesión.
 function Registro() {
   const navigate = useNavigate();
 

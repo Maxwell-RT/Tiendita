@@ -1,19 +1,16 @@
+import { Link } from "react-router-dom";
 import LibroCard from "../components/LibroCard";
 import Boton from "../components/Boton";
 import { libros } from "../data/libros";
-import { Link } from "react-router-dom";
 
-// Adaptación de index.html: hero + catálogo + boletín.
-// La lista de libros ya no está escrita a mano acá -viene de
-// src/data/libros.ts-, así que esta página y catalogo.tsx nunca
-// pueden quedar desincronizadas entre sí (como pasaba en la
-// versión HTML).
+// Página de inicio ("/"): portada, catálogo, boletín y acceso de
+// administrador. Los libros salen de src/data/libros.ts.
 function Inicio() {
   return (
     <>
-      {/* Hero */}
+      {/* Portada */}
       <header className="hero">
-        <p className="hero-eyebrow"> LIBRERÍA INDEPENDIENTE DEL GATO</p>
+        <p className="hero-eyebrow">LIBRERÍA INDEPENDIENTE DEL GATO</p>
         <h1>
           <span className="glitch" data-text="Biblioteca del Gato">
             Biblioteca del Gato
@@ -47,7 +44,7 @@ function Inicio() {
         </div>
       </section>
 
-      {/* Boletín */}
+      {/* Boletín y acceso de administrador */}
       <section className="seccion" id="nosotros">
         <div className="boletin">
           <div>
@@ -65,6 +62,7 @@ function Inicio() {
             <Boton>Suscribirme</Boton>
           </form>
         </div>
+
         <div className="seccion-titulo">
           <h2>Acceso administrador</h2>
           <span className="contador">

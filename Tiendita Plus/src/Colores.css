@@ -813,3 +813,8 @@ footer.footer-cyber {
     grid-template-columns: 64px 1fr;
   }
 }
+
+.btn-cyber.carrito {
+  border-color: var(--verde);
+  color: var(--verde);
+}
